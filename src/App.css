@@ -54,6 +54,19 @@ html {
     transform: translateY(-100vh) scale(0.1);
   }
 }
+.gradient-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(to top, #ffffff, #ffb300);
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(to right, #ffb300, #ffffff);
+}
 
 .rocket {
   position: absolute;

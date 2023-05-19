@@ -64,6 +64,13 @@ function App() {
       {countdown && <h1 className="countdown">{countdown}</h1>}
       <div className="fireworks-container" id="fireworks-container"></div>
 
+      <button
+        className="gradient-button"
+        onClick={() => window.open("https://tfl.vercel.app/", "_blank")}
+      >
+        MINT A FREE NFT
+      </button>
+
       <footer className="footer">
         <a
           href="https://twitter.com/0xSharmaG"
