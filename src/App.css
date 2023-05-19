@@ -4,7 +4,8 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #ffb300);
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -13,8 +14,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #ffffff, #ffb300);
+  height: 100vh;
   flex-direction: column;
 }
 

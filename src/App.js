@@ -43,34 +43,32 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="container">
-        <Confetti height={height} width={width} />
-        <h1 className="text">
-          Bitcoin halving is a festival, not just another date.
-        </h1>
+    <div className="container">
+      <Confetti height={height} width={width} />
+      <h1 className="text">
+        Bitcoin halving is a festival, not just another date.
+      </h1>
 
-        {countdown && <h1 className="countdown ">{countdown}</h1>}
+      {countdown && <h1 className="countdown ">{countdown}</h1>}
 
-        <button
-          className="gradient-button"
-          onClick={() => window.open("https://tfl.vercel.app/", "_blank")}
+      <button
+        className="gradient-button"
+        onClick={() => window.open("https://tfl.vercel.app/", "_blank")}
+      >
+        MINT A FREE NFT
+      </button>
+
+      <footer className="footer">
+        <a
+          href="https://twitter.com/0xSharmaG"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="twitter-link"
         >
-          MINT A FREE NFT
-        </button>
-
-        <footer className="footer">
-          <a
-            href="https://twitter.com/0xSharmaG"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="twitter-link"
-          >
-            <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
-          </a>
-        </footer>
-      </div>
-    </>
+          <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
+        </a>
+      </footer>
+    </div>
   );
 }
 
