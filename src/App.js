@@ -1,26 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import Confetti from "react-confetti";
 import "./App.css";
 
 function App() {
   const [countdown, setCountdown] = useState(null);
-
-  useEffect(() => {
-    generateFireworks();
-  }, []);
-
-  const generateFireworks = () => {
-    const fireworksContainer = document.getElementById("fireworks-container");
-
-    for (let i = 0; i < 10; i++) {
-      const fireworks = document.createElement("div");
-      fireworks.className = "rocket";
-      fireworks.style.left = `${Math.random() * 100}vw`;
-
-      fireworksContainer.appendChild(fireworks);
-    }
-  };
 
   useEffect(() => {
     // Set the target date and time for the countdown
@@ -56,34 +41,34 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <h1 className="text">
-        Bitcoin halving is a festival, not just another date.
-      </h1>
+    <>
+      <Confetti width={1200} />s
+      <div className="container">
+        <h1 className="text">
+          Bitcoin halving is a festival, not just another date.
+        </h1>
 
-      {countdown && <h1 className="countdown">{countdown}</h1>}
-      <div className="fireworks-container" id="fireworks-container"></div>
+        {countdown && <h1 className="countdown ">{countdown}</h1>}
 
-      <button
-        className="gradient-button"
-        onClick={() => window.open("https://tfl.vercel.app/", "_blank")}
-      >
-        MINT A FREE NFT
-      </button>
-
-      <footer className="footer">
-        <a
-          href="https://twitter.com/0xSharmaG"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="twitter-link"
+        <button
+          className="gradient-button"
+          onClick={() => window.open("https://tfl.vercel.app/", "_blank")}
         >
-          <div className="fireworks-container" id="fireworks-container"></div>
+          MINT A FREE NFT
+        </button>
 
-          <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
-        </a>
-      </footer>
-    </div>
+        <footer className="footer">
+          <a
+            href="https://twitter.com/0xSharmaG"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="twitter-link"
+          >
+            <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
+          </a>
+        </footer>
+      </div>
+    </>
   );
 }
 
