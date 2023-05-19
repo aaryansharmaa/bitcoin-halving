@@ -1,23 +1,79 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import "./App.css";
 
 function App() {
+  const [countdown, setCountdown] = useState(null);
+
+  useEffect(() => {
+    generateFireworks();
+  }, []);
+
+  const generateFireworks = () => {
+    const fireworksContainer = document.getElementById("fireworks-container");
+
+    for (let i = 0; i < 10; i++) {
+      const fireworks = document.createElement("div");
+      fireworks.className = "rocket";
+      fireworks.style.left = `${Math.random() * 100}vw`;
+
+      fireworksContainer.appendChild(fireworks);
+    }
+  };
+
+  useEffect(() => {
+    // Set the target date and time for the countdown
+    const targetDate = new Date("April 27, 2024 07:58:32 UTC").getTime();
+
+    // Update the countdown every second
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        // Countdown has ended
+        clearInterval(interval);
+        setCountdown("PUMP IT!");
+      } else {
+        // Calculate remaining time
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Update the countdown state
+        setCountdown(
+          `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
+        );
+      }
+    }, 1000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="container">
+      <h1 className="text">Bitcoin halving is a festival, not another date.</h1>
+
+      {countdown && <h1 className="countdown">{countdown}</h1>}
+      <div className="fireworks-container" id="fireworks-container"></div>
+
+      <footer className="footer">
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://twitter.com/0xSharmaG"
           target="_blank"
           rel="noopener noreferrer"
+          className="twitter-link"
         >
-          Learn React
+          <div className="fireworks-container" id="fireworks-container"></div>
+
+          <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
