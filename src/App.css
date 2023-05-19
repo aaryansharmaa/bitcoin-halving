@@ -1,0 +1,77 @@
+/* Reset default styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Set up container styles */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #ffd000);
+  flex-direction: column;
+}
+
+/* Import Montserrat font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* Set up text styles */
+.text {
+  font-size: 60px;
+  color: #333333;
+  text-align: center;
+}
+
+.countdown {
+  font-size: 30px;
+  margin-top: 20px;
+}
+.footer {
+  position: absolute;
+  bottom: 20px;
+}
+
+.twitter-icon {
+  margin-right: 5px;
+  color: #0099ff;
+}
+
+@keyframes rocket {
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0.1);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(0.1);
+  }
+}
+
+.rocket {
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ff5f00;
+  animation: rocket 5s ease-in-out infinite;
+}
+
+.rocket:nth-child(2n) {
+  background-color: #ffce00;
+}
+
+.rocket:nth-child(3n) {
+  background-color: #00a8e8;
+}
+
+.rocket:nth-child(4n) {
+  background-color: #5f00ff;
+}
