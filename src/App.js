@@ -57,7 +57,9 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="text">Bitcoin halving is a festival, not another date.</h1>
+      <h1 className="text">
+        Bitcoin halving is a festival, not just another date.
+      </h1>
 
       {countdown && <h1 className="countdown">{countdown}</h1>}
       <div className="fireworks-container" id="fireworks-container"></div>

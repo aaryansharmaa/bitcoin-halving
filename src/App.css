@@ -12,7 +12,7 @@ html {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #ffffff, #ffd000);
+  background: linear-gradient(to bottom, #ffffff, #ffb300);
   flex-direction: column;
 }
 
@@ -65,7 +65,7 @@ html {
 }
 
 .rocket:nth-child(2n) {
-  background-color: #ffce00;
+  background-color: hsl(42, 100%, 47%);
 }
 
 .rocket:nth-child(3n) {
