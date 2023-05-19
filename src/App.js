@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Confetti from "react-confetti";
+import useWindowSize from "./useWindowSize";
 import "./App.css";
 
 function App() {
   const [countdown, setCountdown] = useState(null);
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     // Set the target date and time for the countdown
@@ -42,8 +44,8 @@ function App() {
 
   return (
     <>
-      <Confetti width={1200} />s
       <div className="container">
+        <Confetti height={height} width={width} />
         <h1 className="text">
           Bitcoin halving is a festival, not just another date.
         </h1>
