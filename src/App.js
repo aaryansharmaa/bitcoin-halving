@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Confetti from "react-confetti";
 import useWindowSize from "./useWindowSize";
+import BitcoinPrice from "./BitcoinPrice";
 import "./App.css";
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
       <h1 className="text">
         Bitcoin halving is a festival, not just another date.
       </h1>
+
+      <BitcoinPrice />
 
       {countdown && <h1 className="countdown ">{countdown}</h1>}
 
